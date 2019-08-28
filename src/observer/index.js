@@ -16,7 +16,7 @@ class Observer {
 
   walk(obj) {
     Object.keys(obj).forEach(key => {
-      defineReactive(obj, key, obj[key])
+      this.defineReactive(obj, key, obj[key])
     })
   }
 

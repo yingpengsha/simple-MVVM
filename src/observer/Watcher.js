@@ -9,7 +9,7 @@ class Watcher {
     if (typeof expOrFn === 'function') {
       this.getter = expOrFn
     } else {
-      this.getter = parsePath(expOrFn)
+      this.getter = this.parseGetter(expOrFn)
     }
 
     this.value = this.get()
@@ -23,7 +23,7 @@ class Watcher {
     const newVal = this.get()
     const oldVal = this.value
     if (newVal !== oldVal) {
-      this.value = value
+      this.value = newVal
       this.cb.call(this.vm, newVal, oldVal)
     }
   }
@@ -45,7 +45,7 @@ class Watcher {
   parseGetter(exp) {
     if (/[^\w.$]/.test(exp)) return
 
-    const segments = path.split('.')
+    const segments = exp.split('.')
     return function(obj) {
       for (let i = 0; i < segments.length; i++) {
         if (!obj) return
