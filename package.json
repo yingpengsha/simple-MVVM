@@ -4,7 +4,7 @@
   "description": "a sample MVVM framework",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d lib && browserify lib/index.js -o lib/bundle.js && rimraf ./lib/index.js"
+    "build": "babel src -d lib/tmp && browserify lib/tmp/index.js -o lib/bundle.js && rimraf ./lib/tmp"
   },
   "keywords": [
     "MVVM"
