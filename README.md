@@ -1,8 +1,10 @@
 # simple-MVVM
 
-a sample MVVM framework written by Vue
+## Introduction
 
-## Example
+Imitate a sample MVVM framework written by Vue
+
+- [Preview](https://yingpengsha.github.io/simple-MVVM/)
 
 ## Feature
 
