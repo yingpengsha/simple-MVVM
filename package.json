@@ -4,7 +4,7 @@
   "description": "a sample MVVM framework",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d lib/tmp && browserify lib/tmp/index.js -o lib/bundle.js && rimraf ./lib/tmp"
+    "build": "babel src -d lib/tmp && browserify lib/tmp/index.js -o lib/bundle.js && rimraf ./lib/tmp && copyfiles ./lib/bundle.js docs"
   },
   "keywords": [
     "MVVM"
@@ -15,6 +15,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "browserify": "^16.5.0",
+    "copyfiles": "^2.1.1",
     "rimraf": "^3.0.0"
   }
 }
